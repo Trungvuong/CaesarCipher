@@ -25,18 +25,18 @@ int main(int argc, char* argv[]){
 	    if(*argv[2] == 'E'){
 		for(int i = 0; i < strlen(message); i++){
 		    if(isupper(message[i]))
-			printf("%c", (((message[i] - 'A' + key) % 26) + 'A'));
+			printf("%c", ((((message[i] - 'A') + key) % 26) + 'A'));
 		    if(islower(message[i]))
-			printf("%c", (((message[i] - 'a' + key) % 26) + 'a'));
+			printf("%c", ((((message[i] - 'a') + key) % 26) + 'a'));
 		}
 	    }
 
 	    else{
 		for(int i = 0; i < strlen(message); i++){
-		    if(isalpha(message[i]))
-		    	printf("%c", (((message[i] - 'A' + key) % 26) + 'A'));
+		    if(isupper(message[i]))
+		    	printf("%c", ((((message[i] - 'A') - key) % 26) + 'A'));
 		    if(islower(message[i]))
-			printf("%c", (((message[i] = 'a' + key) % 26) + 'a'));
+			printf("%c", ((((message[i] - 'a') - key) % 26) + 'a'));
 		}
 	    }
 	    printf("\n");
